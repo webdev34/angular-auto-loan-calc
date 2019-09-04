@@ -1,0 +1,49 @@
+<section class="loan-calc-section" [hidden]="showResults">
+  <mat-card>
+      <form [formGroup]="loanCalcForm" autocomplete="off" novalidate (ngSubmit)="calculateLoan(loanCalcForm.value)" fxLayout="column wrap"
+      fxLayoutAlign="center center" fxLayoutGap="10px">
+        <mat-form-field>
+            <input matInput  type="number" placeholder="Car Price" formControlName="carPrice" id="carPrice" required />
+            <mat-error *ngIf="hasError('carPrice', 'required')">Car Price is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput type="number" placeholder="Down Payment" formControlName="downPayment" id="downPayment" />
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput type="number" placeholder="Trade-in" formControlName="tradeInValue" id="tradeInValue" />
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput type="number" placeholder="Interest Rate" formControlName="interestRate" id="interestRate" />
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput type="number" placeholder="Year(s)" formControlName="years" id="years" />
+        </mat-form-field>
+    
+        <mat-form-field>
+            <input matInput type="number" placeholder="Month(s)" formControlName="months" id="months" />
+        </mat-form-field>
+
+        <mat-card-actions align="center">
+            <button mat-raised-button color="primary" [disabled]="!loanCalcForm.valid">Create</button>
+            <button mat-raised-button type="button" color="warn" (click)="setForm()">Cancel</button>
+        </mat-card-actions>
+        </form>
+    </mat-card>
+</section>
+
+<section class="loan-calc-section loan-calc-values" [hidden]="!showResults" >
+    <mat-card>
+        <mat-card-title>
+            Your Payment for {{iLoanCalc.duration}} Months will be ${{iLoanCalc.monthlyPayment}}<br/>
+            if exact payments are made over {{iLoanCalc.duration}} Months,<br/>
+             you will pay off your loan on {{iLoanCalc.paymentEndDate | date: 'MM/dd/yyyy'}}.
+        </mat-card-title>
+    </mat-card>
+    <mat-card-actions align="center">
+        <button mat-raised-button color="primary" (click)="setForm()">New Calculation</button>
+    </mat-card-actions>
+</section>

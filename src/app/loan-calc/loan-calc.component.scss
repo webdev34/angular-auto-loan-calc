@@ -1,0 +1,15 @@
+.loan-calc-section {
+    width: 300px;
+    margin: 0 auto;
+    
+    &.loan-calc-values{
+        width: 600px;
+        text-align: center;
+    }
+
+    mat-form-field { 
+        display: block; 
+        width: 100%;
+    }
+}
+

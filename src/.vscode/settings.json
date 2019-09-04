@@ -1,0 +1,6 @@
+{
+    "typescript.referencesCodeLens.enabled": true,
+    "typescript.implementationsCodeLens.enabled": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "javascript.implicitProjectConfig.experimentalDecorators": true
+}
