@@ -1,4 +1,7 @@
-# AngularAutoLoanCalc
+# Angular Auto Loan Calc
+
+
+Calculate your auto loan with trade in value and down payment.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.2.
 
